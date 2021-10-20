@@ -9,7 +9,7 @@ def f(x):
 
 
 options = {'c1': 0.25, 'c2': 1.2, 'w': 0.9}
-bounds = np.array([[-3, -3], [3, 3]])
+bounds = np.array([[-3, -3], [3, 3]])   # Add x and y limit to (-3, 3)
 optimizer = ps.single.GlobalBestPSO(n_particles=100, dimensions=2, bounds=bounds, options=options)
 best_cost, best_pos = optimizer.optimize(f, iters=250)
 best_pos = np.round(best_pos, 2)        # Round to 2 decimals
